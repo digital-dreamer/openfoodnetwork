@@ -42,14 +42,12 @@ describe Enterprise do
       it "scopes relatives to visible distributors" do
         e.should_receive(:relatives).and_return(relatives = [])
         relatives.should_receive(:is_distributor).and_return relatives
-        relatives.should_receive(:visible)
         e.distributors
       end
 
       it "scopes relatives to visible producers" do
         e.should_receive(:relatives).and_return(relatives = [])
         relatives.should_receive(:is_primary_producer).and_return relatives
-        relatives.should_receive(:visible)
         e.suppliers
       end
     end
@@ -68,13 +66,7 @@ describe Enterprise do
     it { should delegate(:city).to(:address) }
     it { should delegate(:state_name).to(:address) }
   end
-
-  it "should default address country to system country" do
-    subject.address.country.should == Spree::Country.find_by_id(Spree::Config[:default_country_id])
-  end
-
   describe "scopes" do
-
     describe 'active' do
       it 'find active enterprises' do
         d1 = create(:distributor_enterprise, visible: false)
@@ -439,12 +431,12 @@ describe Enterprise do
 
     it "gets all taxons of all distributed products" do
       Spree::Product.stub(:in_distributor).and_return [product1, product2]
-      distributor.distributed_taxons.should == [taxon1, taxon2]
+      distributor.distributed_taxons.sort.should == [taxon1, taxon2].sort
     end
 
     it "gets all taxons of all supplied products" do
       Spree::Product.stub(:in_supplier).and_return [product1, product2]
-      supplier.supplied_taxons.should == [taxon1, taxon2]
+      supplier.supplied_taxons.sort.should == [taxon1, taxon2].sort
     end
   end
 
