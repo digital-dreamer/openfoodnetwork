@@ -14,7 +14,8 @@
 
 =admin_inject_producers
 =admin_inject_taxons
-%div{ 'ng-app' => 'ofn.admin', 'ng-controller' => 'AdminProductEditCtrl', 'ng-init' => "initialise('#{@spree_api_key}');loading=true;" }
+=admin_inject_spree_api_key
+%div{ ng: { app: 'ofn.admin', controller: 'AdminProductEditCtrl', init: 'initialise()' } }
   %div.sixteen.columns.alpha
     %div.quick_search{ :class => "four columns alpha" }
       %label{ :for => 'quick_filter' }
