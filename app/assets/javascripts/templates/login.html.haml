@@ -3,7 +3,7 @@
   active: "active(path)", 
   select: "select(path)"}
   %form{"ng-submit" => "submit()"}
-    .row
+    .row.pad-top
       .large-12.columns
         .alert-box.alert{"ng-show" => "errors != null"}
           {{ errors }}
@@ -13,6 +13,7 @@
         %input.title.input-text{name: "email", 
           type: "email",
           id: "email",
+          placeholder: "me@mydomain.com.au",
           tabindex: 1,
           "ng-model" => "spree_user.email"}
     .row
@@ -21,6 +22,7 @@
         %input.title.input-text{name: "password", 
           type: "password",
           id: "password",
+          placeholder: "your password",
           autocomplete: "off",
           tabindex: 2,
           "ng-model" => "spree_user.password"}

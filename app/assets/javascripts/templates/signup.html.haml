@@ -3,12 +3,13 @@
   active: "active(path)",
   select: "select(path)"}
   %form{"ng-submit" => "submit()"}
-    .row
+    .row.pad-top
       .large-12.columns
         %label{for: "email"} Your email
         %input.title.input-text{name: "email",
           type: "email",
           id: "email",
+          placeholder: "me@mydomain.com.au",
           tabindex: 1,
           "ng-model" => "spree_user.email"}
         %span.error{"ng-show" => "errors.email != null"}
@@ -20,6 +21,7 @@
           type: "password",
           id: "password",
           autocomplete: "off",
+          placeholder: "Use letters and numbers to make it secure!",
           tabindex: 2,
           "ng-model" => "spree_user.password"}
         %span.error{"ng-show" => "errors.password != null"}
@@ -31,6 +33,7 @@
           type: "password",
           id: "password_confirmation",
           autocomplete: "off",
+          placeholder: "Enter the same password again",
           tabindex: 2,
           "ng-model" => "spree_user.password_confirmation"}
     .row

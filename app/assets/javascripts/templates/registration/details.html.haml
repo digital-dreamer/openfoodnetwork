@@ -1,15 +1,18 @@
 .container#registration-details
   .header
-    %h2 Let's Get Started
-    %h5 Woot! First we need to know what sort of enterprise you are:
+    %h3 Getting started
+    %h5 
+      Woot! First we need to know 
+      %em what sort 
+      of enterprise you are
   %ng-include{ src: "'registration/steps.html'" }
   %form{ name: 'details', novalidate: true, ng: { controller: "RegistrationFormCtrl", submit: "selectIfValid('address',details)" } }
     .row
       .small-12.columns.field
-        %label{ for: 'enterprise_name' } Enterprise Name:
-        %input.chunky.small-12.columns{ id: 'enterprise_name', name: 'name', placeholder: "eg. Charlie's Awesome Farm", required: true, ng: { model: 'enterprise.name' } }
-        %span.error.small-12.columns{ ng: { show: "details.name.$error.required && submitted" } }
-          You need to enter a name for your enterprise!
+        %label{ for: 'enterprise_name' } Enterprise name:
+        %input{ id: 'enterprise_name', name: 'name', type: 'text', autofocus: 'autofocus', placeholder: "eg. Charlie's Awesome Farm", required: true, ng: { model: 'enterprise.name' } }
+        %span.error{ ng: { show: "details.name.$error.required && submitted" } }
+          Please enter a name
 
     .row#enterprise-types{ 'data-equalizer' => true }
       .small-12.columns.field
@@ -37,4 +40,4 @@
               %p Hey there, Jack-of-all-trades! Not only do you produce things to eat &amp;/or drink, you also want to sell your yummies through an Open Food Network shopfront.
     .row.buttons
       .small-12.columns
-        %input.button.primary.right{ type: "submit", value: "Continue" }
+        %input.button.primary{ type: "submit", value: "Continue" }

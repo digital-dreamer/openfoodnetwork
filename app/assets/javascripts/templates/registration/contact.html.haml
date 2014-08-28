@@ -11,20 +11,20 @@
       .small-12.medium-12.large-7.columns
         .row
           .small-12.columns.field
-            %label{ for: 'enterprise_contact' } Primary Contact:
-            %input.chunky.small-12.columns{ id: 'enterprise_contact', name: 'contact', required: true, placeholder: "Contact Name", ng: { model: 'enterprise.contact' } }
-            %span.error.small-12.columns{ ng: { show: "contact.contact.$error.required && submitted" } }
-              You need to enter a primary contact.
+            %label{ for: 'enterprise_contact' } Primary contact:
+            %input{ id: 'enterprise_contact', name: 'contact', type: 'text', autofocus: 'autofocus', required: true, placeholder: "Contact Name", ng: { model: 'enterprise.contact' } }
+            %span.error{ ng: { show: "contact.contact.$error.required && submitted" } }
+              Please enter primary contact name
         .row
           .small-12.columns.field
             %label{ for: 'enterprise_email' } Email address:
-            %input.chunky.small-12.columns{ id: 'enterprise_email', name: 'email', type: 'email', required: true, placeholder: "eg. charlie@thefarm.com", ng: { model: 'enterprise.email' } }
-            %span.error.small-12.columns{ ng: { show: "(contact.email.$error.email || contact.email.$error.required) && submitted" } }
-              You need to enter valid email address.
+            %input{ id: 'enterprise_email', name: 'email', type: 'email', required: true, placeholder: "eg. charlie@thefarm.com", ng: { model: 'enterprise.email' } }
+            %span.error{ ng: { show: "(contact.email.$error.email || contact.email.$error.required) && submitted" } }
+              Please enter a enter valid email address
         .row
           .small-12.columns.field
             %label{ for: 'enterprise_phone' } Phone number:
-            %input.chunky.small-12.columns{ id: 'enterprise_phone', name: 'phone', placeholder: "eg. (03) 1234 5678", ng: { model: 'enterprise.phone' } }
+            %input{ id: 'enterprise_phone', name: 'phone', type: 'tel', placeholder: "eg. (03) 1234 5678", ng: { model: 'enterprise.phone' } }
       .small-12.medium-12.large-5.hide-for-small-only
         / %h6
         /   Contact display

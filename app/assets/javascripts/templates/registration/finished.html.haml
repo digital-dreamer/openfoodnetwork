@@ -7,13 +7,16 @@
         {{ enterprise.name }}
       %span.turquoise{"ng-show" => "!enterprise.is_distributor" }
         {{ enterprise.name }}
-  .content{ style: 'text-align: center'}
-    %h3 Why not check it out on the Open Food Network?
-    %a.button.primary{ type: "button", href: "/map" } Go to Map Page &gt;
+  .content.pad-top.modal-centered
+    .pad-top
+      %h5 Why not check it out on the Open Food Network?
+      %a.button.primary{ type: "button", href: "/map" } 
+        See it on the map 
+        %i.ofn-i_054-point-right
     
-    %br
-    %br
-    
-    %h3 Next step - add some products:
-    %a.button.primary{ type: "button", href: "/admin/products/new" } Add a Product &gt;
+    .pad-top
+      %h5 Next step - add some products:
+      %a.button.primary{ type: "button", href: "/admin/products/new" } 
+        Add a product 
+        %i.ofn-i_054-point-right
     

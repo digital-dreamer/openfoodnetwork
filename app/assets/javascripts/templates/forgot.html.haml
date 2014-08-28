@@ -5,7 +5,7 @@
 
   %form{"ng-submit" => "submit()"}
 
-    .row
+    .row.pad-top
       .large-12.columns
         .alert-box.success.radius{"ng-show" => "sent"}
           An email with instructions on resetting your password has been sent!
@@ -20,6 +20,7 @@
           %input.title.input-text{name: "email", 
             type: "email",
             id: "email",
+            placeholder: "me@mydomain.com.au",
             tabindex: 1,
             "ng-model" => "spree_user.email"}
       .row
