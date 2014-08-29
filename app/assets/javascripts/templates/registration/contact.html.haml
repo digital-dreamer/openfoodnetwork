@@ -25,7 +25,16 @@
           .small-12.columns.field
             %label{ for: 'enterprise_phone' } Phone number:
             %input{ id: 'enterprise_phone', name: 'phone', type: 'tel', placeholder: "eg. (03) 1234 5678", ng: { model: 'enterprise.phone' } }
-      .small-12.medium-12.large-5.hide-for-small-only
+
+      .small-12.medium-12.large-5.columns
+        .row
+          .small-12.columns
+            %label{ for: 'enterprise_abn' } Enterprise ABN
+            %input{ id: 'enterprise_abn', placeholder: "eg. 53 004 085 616", type: 'number', ng: { model: 'enterprise.abn' } }
+        .row
+          .small-12.columns
+            %label{ for: 'enterprise_acn' } Enterprise ACN
+            %input{ id: 'enterprise_acn', placeholder: "eg. 009 249 969", type: 'number', ng: { model: 'enterprise.acn' } }
         / %h6
         /   Contact display
         /   %i.ofn-i_013-help.has-tip{ 'data-tooltip' => true, title: "Choose how you want to display your contact details on the Open Food Network."}

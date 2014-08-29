@@ -33,15 +33,9 @@
               Please enter a long description
             %p.chars-used
               %small ( {{ enterprise.long_description.length }} ) characters used
-      .small-12.large-4.columns
-        .row
-          .small-12.columns
-            %label{ for: 'enterprise_abn' } ABN:
-            %input{ id: 'enterprise_abn', placeholder: "eg. 99 123 456 789", type: 'number', ng: { model: 'enterprise.abn' } }
-        .row
-          .small-12.columns
-            %label{ for: 'enterprise_acn' } ACN:
-            %input{ id: 'enterprise_acn', placeholder: "eg. 123 456 789", type: 'number', ng: { model: 'enterprise.acn' } }
+      .small-12.large-4.columns.hide-for-small-only
+        %p
+        
     .row.buttons.pad-top
       .small-12.columns
         %input.button.secondary{ type: "button", value: "Back", ng: { click: "select('contact')" } }
